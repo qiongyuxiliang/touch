@@ -1,0 +1,73 @@
+html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
+	margin: 0;
+	padding: 0;
+}
+*{box-sizing: border-box;}
+h1, h2, h3, h4, h5, h6{font-weight:normal;}
+ul,ol {
+	list-style: none;
+}
+
+img {
+	border: none;
+	vertical-align: middle;
+}
+
+a {
+	text-decoration: none;
+	color: #232323;
+}
+li{
+	list-style-type: none; 
+}
+/*以上是公用的css代码*/
+body{
+	background: #FEFEFE;
+}
+.header{
+	width: 100%;
+}
+.girl{
+	width: 100%;
+}
+.container{
+	width: 90%;
+
+	margin: 0 auto;
+	margin-top: 15px;
+}
+.girl_list{
+	display: flex;
+	display:-webkit-flex;
+	-webkit-flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	 -webkit-justify-content:space-between;
+}
+.girl_list .outer{
+	width: 48%
+}
+.name_job{
+	font-size: 14px;
+	color:#3F3F3F;
+	margin-top: 5px;
+	margin-bottom: 8px;
+	font-weight: bold;
+}
+.detail{
+	font-weight: bold;
+	color: #F0A240;
+	font-size: 12px;
+	margin-bottom: 8px;
+}
+.download{
+	font-weight: bold;
+	height: 40px;
+	color: #fff;
+	line-height: 40px;
+	text-align: center;
+	margin-left:4%;
+	font-size: 14px;
+	margin-top: 20px; 
+	width: 95%;
+	background:#1BA1E8;
+}
