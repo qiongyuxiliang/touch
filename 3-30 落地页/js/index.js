@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	function isPC()  
+  function isPC()  
        {  
            var userAgentInfo = navigator.userAgent;  
            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");  
@@ -10,13 +10,13 @@ $(document).ready(function(){
            return flag;  
        } 
        $('.download').on('click',function(){
-       	var f=isPC();
-       	if(f==true){
-       		alert('pc端下载');
-       	}
-       	else{
-       		alert('移动端下载');
-       	}
+        var f=isPC();
+        if(f==true){
+          alert('pc端下载');
+        }
+        else{
+          alert('移动端下载');
+        }
        })
        // 
        // $('#id').on('touchstart',function(e) {
@@ -66,7 +66,7 @@ $(document).ready(function(){
        // 获取header图片的高度
        var h=$('#header').height();
      
-       	$('#header').on({
+        $('#header').on({
           touchstart:function(e){
             var _touch1 = e.originalEvent.targetTouches[0];
             var y1= _touch1.screenY;
@@ -81,26 +81,37 @@ $(document).ready(function(){
             var y2= _touch2.screenY;
              e.preventDefault();
              console.log(12);
-             console.log(h);
-             // console.log(y2)
-            $(this).css({
-              'margin-top':-y2+'px'
+             if((y2-y1>0)&&(y2-y1<15)){
+              $(this).css({
+              'margin-top':(y2-y1)+'px'
             })
+             }
+             if(y2-y1>=15){
+              $(this).css({
+              'margin-top':'15px'
+            })
+             }
+             else{
+              $(this).css({
+              'margin-top':(y2-y1)+'px'
+            })
+             }
 
           },
           touchend:function(e){
             var _touch3 = e.originalEvent.changedTouches[0];
             var y3= _touch3.screenY;
              e.preventDefault();
-            if((y3-y1)>=h/2){
+            if((y1-y3)>=(h/2)){
               $(this).css({
-              'margin-top':-h/2+'px'
+              'margin-top':-(h/2)+'px'
             })           
             }
             else{
               console.log(123)
               console.log(y3)
-                $(this).animate({'height':(y3-y1)+'px'});
+              console.log(this)
+                $(this).animate({'margin-top':0});
               }
 
           }
