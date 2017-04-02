@@ -71,3 +71,35 @@ body{
 	width: 95%;
 	background:#1BA1E8;
 }
+.re{
+	display: none;
+	height: 35px;
+	line-height: 35px;
+	position: absolute;
+	z-index: -2;
+	top: 0;
+	left: 40%;
+	font-size: 12px;
+}
+.re .renew{
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+
+}
+.re1{
+	display: none;
+	height: 35px;
+	line-height: 35px;
+	position: absolute;
+	z-index: -2;
+	border-bottom: 0;
+	left: 40%;
+	font-size: 12px;
+}
+.re1 .renew1{
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+
+}
