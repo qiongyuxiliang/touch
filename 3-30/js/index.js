@@ -1,23 +1,7 @@
 $(document).ready(function(){
-	function isPC()  
- {  
-   var userAgentInfo = navigator.userAgent;  
-   var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");  
-   var flag = true;  
-   for (var v = 0; v < Agents.length; v++) {  
-     if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }  
-   }  
-   return flag;  
- } 
- $('.download').on('click',function(){
-  var f=isPC();
-  if(f==true){
-   alert('pc端下载');
- }
- else{
-   alert('移动端下载');
- }
-})
+  // 'use strict';
+  alert(1);
+	
        // 
        // $('#id').on('touchstart',function(e) {
 //     var _touch = e.originalEvent.targetTouches[0];
@@ -70,14 +54,14 @@ $(document).ready(function(){
        $('body').on({
         touchstart:function(e){
           var _touch1 = e.originalEvent.targetTouches[0];
-          var y1= _touch1.screenY;
+          var y1= _touch1.clientY;
           window.y1=y1;
             // e.preventDefault();
 
           },
           touchmove:function(e){
             var _touch2 = e.originalEvent.targetTouches[0];
-            var y2= _touch2.screenY;
+            var y2= _touch2.clientY;
             // 头部刷新
              // e.preventDefault();
                if((y2-y1>0)&&(y2-y1<15)&&($(document).scrollTop())<=0){
@@ -110,15 +94,15 @@ $(document).ready(function(){
          },
          touchend:function(e){
           var _touch3 = e.originalEvent.changedTouches[0];
-          var y3= _touch3.screenY;
-             // e.preventDefault();
+          var y3= _touch3.clientY;
+          // e.preventDefault();
             var self=this;
-            // 使顶部加载动画移动到顶部
+         //    // 使顶部加载动画移动到顶部
             function d() {
             $(self).animate({'margin-top':0},'normal','linear');
             $('.re').hide();
              }
-             // 使底部加载动画移动到底部
+         //     // 使底部加载动画移动到底部
              function c() {
                $(self).animate({'margin-bottom':0},'normal','linear');
                $('.re1').hide();
@@ -141,7 +125,7 @@ $(document).ready(function(){
               }
               var nj=$('.name_job');
               // var i=0;
-              for (let i=0;i<nj.length;i++)
+              for (var i=0;i<nj.length;i++)
               {
                   $('.name_job').eq(i).text(json_name['name'+i])
                   // body...
@@ -149,17 +133,17 @@ $(document).ready(function(){
                 
               }
               
-              // html="<img src="images/girl_four.jpg" alt="" class="girl">";
-              // html+="<div class="name_job">小李，自己开水果店</div>";
-              // html+="<div class="detail">23岁，未婚，独立坚强，考虑结婚</div>";
-              // li.append(html);
-              // docfrag.appendChild(li);
-              // $('ul')[0].appendChild(docfrag);
+         //      // html="<img src="images/girl_four.jpg" alt="" class="girl">";
+         //      // html+="<div class="name_job">小李，自己开水果店</div>";
+         //      // html+="<div class="detail">23岁，未婚，独立坚强，考虑结婚</div>";
+         //      // li.append(html);
+         //      // docfrag.appendChild(li);
+         //      // $('ul')[0].appendChild(docfrag);
 
             }
                       
-              // $('.re1').hide();
-              // 底部
+         //      // $('.re1').hide();
+         //      // 底部
              if(y1>y3&&y1-y3<15&&(($(window).scrollTop())>=($(this).height())-($(window).height())))
              {
              // y用settimeout控制时间显示
@@ -173,10 +157,29 @@ $(document).ready(function(){
             var docfrag=document.createDocumentFragment(),
               li = document.createElement("li"),
               html;
-              html=$("ul").append($('li').clone());
+              html=$("ul").append($('li').clone(true));
 
              }
 
             }
           })
+ function isPC()  
+ {  
+   var userAgentInfo = navigator.userAgent;  
+   var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");  
+   var flag = true;  
+   for (var v = 0; v < Agents.length; v++) {  
+     if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }  
+   }  
+   return flag;  
+ } 
+ $('.download').on('click',function(e){
+  var f=isPC();
+  if(f==true){
+   alert('pc端下载');
+ }
+ else{
+   alert('移动端下载');
+ }
+})
      })
